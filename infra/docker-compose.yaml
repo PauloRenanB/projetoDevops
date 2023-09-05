@@ -1,0 +1,38 @@
+
+version: '3.8'
+
+networks:
+  petconsult-network:
+    driver:
+      bridge
+
+services:
+  postgresql:
+    container_name: postgres
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: MyPass01
+      POSTGRES_USER: petconsult
+      POSTGRES_DB: petconsultdb
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - petconsult-network
+
+  petconsult: 
+    image: jersonb/petconsult:latest
+    depends_on: 
+      - postgresql
+    container_name: petconsult
+    restart: always
+    ports:
+      - 5000:80
+    networks:
+      - petconsult-network
+
+
+volumes:
+  postgres:
