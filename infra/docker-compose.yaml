@@ -23,7 +23,7 @@ services:
       - petconsult-network
 
   petconsult: 
-    image: jersonb/petconsult:latest
+    image: jersonb/petconsult:main
     depends_on: 
       - postgresql
     container_name: petconsult
