@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon"  href="assets/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 
     <title>Document</title>
 </head>
+
 <body>
-    
+
+    <h1>Gatos</h1>
+    <form id="cat-form" action="" onsubmit="submitFormCat(event)" method="post">
+        <input type="hidden" name="id">
+        <label>Nome:</label>
+        <input placeholder="nome" type="text"  name="name">
+        <br>
+        <label>Nascimento:</label>
+        <input type="date" name="birthday" >
+        <br>
+        <label>Adoção:</label>
+        <input type="date" name="adoptionDate" >
+        <br>
+        <input type="submit" value="enviar">
+    </form>
+
+    <ul id="cat-list"></ul>
+
     <script src="script.js" type="text/javascript"></script>
 </body>
+
 </html>

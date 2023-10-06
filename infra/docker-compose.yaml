@@ -9,7 +9,7 @@ networks:
 services:
   postgresql:
     container_name: postgres
-    image: postgres:13
+    image: postgres
     restart: always
     environment:
       POSTGRES_PASSWORD: MyPass01
