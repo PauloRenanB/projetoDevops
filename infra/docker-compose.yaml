@@ -46,6 +46,17 @@ services:
     networks:
       - petconsult-network
 
+  devops-app_front:
+      image: devops-app:latest
+      build:
+        context: ../front-pet
+        dockerfile: Dockerfile
+      environment:
+        NODE_ENV: production
+      ports:
+        - 3000:3000
+      networks:
+        - petconsult-network
 
 volumes:
   postgres:
