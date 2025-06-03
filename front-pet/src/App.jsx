@@ -8,7 +8,7 @@ function App() {
   const [dataNasc, setDataNasc] = useState('')
   const [dataAdocao, setDataAdocao] = useState('')
   const [pets, setPets] = useState([])
-  const url = 'http://ip172-18-0-50-d0t4tlgl2o9000dn23mg-5000.direct.labs.play-with-docker.com/api/Pets'
+  const url = import.meta.env.VITE_BASE_URL
 
   const cadastroNovoPet = async () => {
     var novoPet = {
